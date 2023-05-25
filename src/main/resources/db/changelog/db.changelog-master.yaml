@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - include:
+      id: "1"
+      author: ronit.macwan	
+      file: classpath:/db/changelog/sql-files/1.0/001_initial_schema.sql
+      relativeToChangelogFile: false
+      context: post-process-db-changes
+  - include:
+      id: "2"
+      author: ronit.macwan
+      file: classpath:/db/changelog/sql-files/1.0/002_initial_insert.sql
+      relativeToChangelogFile: false
+      context: post-process-db-changes

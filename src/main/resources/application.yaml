@@ -1,0 +1,52 @@
+server: 
+ port: 8905
+ servlet:
+  context-path: /demo
+spring:
+ datasource:
+  driverClassName: org.postgresql.Driver
+  url: jdbc:postgresql://localhost:5432/demo_db
+  username: demo_user
+  password: demo_user
+ jpa: 
+  hibernate: 
+   format_sql: true
+   enable_lazy_load_no_trans: true
+   jdbc:
+    lob:
+     non_contextual_creation: true
+   ddl-auto: update
+  show-sql: true
+ liquibase:
+  change-log: classpath:db/changelog/db.changelog-master.yaml
+ main: 
+  allow-bean-definition-overriding: true
+servlet:
+  multipart:
+   enabled: true
+   max-file-size: 10MB
+   max-request-size: 20MB
+
+file:
+ upload-dir: ./uploads
+email:
+ background: banner.jpg
+application:
+ name: Demo
+ currency: INR
+ country-code: +91
+ 
+#If show otp true then it will display in console
+show-otp: false
+#If real sms true then we will trigger sms
+real:
+ sms: false
+#if static otp is true then we will generate static otp 123456
+static:
+ otp: true
+
+service: 
+ url: http://localhost:8905/demo/
+local: 
+ service: 
+  url: http://localhost:8905/demo/
